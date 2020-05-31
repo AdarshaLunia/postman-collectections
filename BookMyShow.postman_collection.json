@@ -1,0 +1,577 @@
+{
+	"info": {
+		"_postman_id": "4328d78b-ffc4-426a-bf5f-4dd2f999619b",
+		"name": "BookMyShow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8090/api/v1/theater/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/byid?theaterCode=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/byid?theaterId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"byid"
+					],
+					"query": [
+						{
+							"key": "theaterId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/bylocation?location=BLR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/location?location=BLR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"location"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "BLR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/movies/location?location=BLR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/movies/locations?location=BLR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"movies",
+						"locations"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "BLR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/add/shows?theareCode=ABCC",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"price\": 55.7,\n    \"shift\": \"EARLY_MORNING\",\n    \"showTime\": \"13:12\",\n    \"showType\": \"GOLD\"\n  },\n  {\n    \"price\": 55.7,\n    \"shift\": \"EARLY_MORNING\",\n    \"showTime\": \"13:12\",\n    \"showType\": \"GOLD\"\n  },\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/addshows?theareCode=ABCC",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"addshows"
+					],
+					"query": [
+						{
+							"key": "theareCode",
+							"value": "ABCC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/movies?locationCode=MYSR&movieId=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/movies?locationCode=MSR&movieId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"movies"
+					],
+					"query": [
+						{
+							"key": "locationCode",
+							"value": "MSR"
+						},
+						{
+							"key": "movieId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/update/shows?movieCode=2020",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "        {\n            \"id\": 1,\n            \"showType\": \"PLATINUM\",\n            \"shift\": \"MIDNIGHT\",\n            \"showTime\": \"08:00\",\n            \"price\": 777.7\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/updateshows?movieCode=2021",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"updateshows"
+					],
+					"query": [
+						{
+							"key": "movieCode",
+							"value": "2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/theatershows?theaterCode=PVDR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/theatershows?theaterCode=PVDR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"theatershows"
+					],
+					"query": [
+						{
+							"key": "theaterCode",
+							"value": "PVDR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/update/shows?theareCode=ABCC&movieCode=1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"price\": 666.7,\n  \"shift\": \"AFTERNOON\",\n  \"showTime\": \"12:12\",\n  \"showType\": \"GOLD\",\n  \"movie\": {\n    \"movieCode\": \"2022\"\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/update/shows?theareCode=ABCC&movieCode=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"update",
+						"shows"
+					],
+					"query": [
+						{
+							"key": "theareCode",
+							"value": "ABCC"
+						},
+						{
+							"key": "movieCode",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/shows?theaterId=3&movieId=3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/shows?theaterId=3&movieId=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"shows"
+					],
+					"query": [
+						{
+							"key": "theaterId",
+							"value": "3"
+						},
+						{
+							"key": "movieId",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/bycode?theaterCode=PVDR",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/bycode?theaterCode=PVDR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"bycode"
+					],
+					"query": [
+						{
+							"key": "theaterCode",
+							"value": "PVDR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/admin/newuser?theaterCode=PVDR",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"username\": \"user1\",\n        \"password\": \"pwd1\",\n        \"roles\": \"T_ADMIN\",\n        \"permissions\": \"READ,WRITE,UPDATE,DELETE\"\n    },\n    {\n        \"username\": \"user2\",\n        \"password\": \"pwd2\",\n        \"roles\": \"SALES\",\n        \"permissions\": \"READ,UPDATE\"\n    }\n]\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v1/admin/newuser?theaterCode=PVDR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"newuser"
+					],
+					"query": [
+						{
+							"key": "theaterCode",
+							"value": "PVDR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/add/movie?theaterCode=PVDR",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "manager",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n \n {\n    \"available\": true,\n    \"movieCode\": \"MLL\",\n    \"movieName\": \"fgdfgdf Dulhaniya Le Jahenge\",\n    \"movieUrl\": \"sdasd.come\"\n }\n\t\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/add/movie?theaterCode=PVDR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"add",
+						"movie"
+					],
+					"query": [
+						{
+							"key": "theaterCode",
+							"value": "PVDR"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/seats?theaterId=3&movieId=3&showId=20",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/seats?theaterId=3&movieId=3&showId=20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"seats"
+					],
+					"query": [
+						{
+							"key": "theaterId",
+							"value": "3"
+						},
+						{
+							"key": "movieId",
+							"value": "3"
+						},
+						{
+							"key": "showId",
+							"value": "20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8090/api/v1/theater/adarsha?auditoruimId=1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8090/api/v1/theater/adarsha?auditoruimId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8090",
+					"path": [
+						"api",
+						"v1",
+						"theater",
+						"adarsha"
+					],
+					"query": [
+						{
+							"key": "auditoruimId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/carts/active/adarsha.lunia@yahoo.com",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "31fe268e-6254-4ea1-b412-cad605de3833",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/carts/active/adarsha.lunia@yahoo.com",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"carts",
+						"active",
+						"adarsha.lunia@yahoo.com"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
